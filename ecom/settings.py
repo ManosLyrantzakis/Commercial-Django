@@ -29,13 +29,10 @@ SECRET_KEY = env('SECRET_KEY')
 #ENCRYPT_KEY = env('ENCRYPT_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if ENVIRONMENT =='development':
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = False
+
     
-    
-ALLOWED_HOSTS = ["commercial-django-production.up.railway.app",]
+ALLOWED_HOSTS = ["commercial-django-production.up.railway.app", 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ["https://commercial-django-production.up.railway.app"]
 
@@ -157,10 +154,8 @@ STATICFILES_DIRS = ['static/']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
