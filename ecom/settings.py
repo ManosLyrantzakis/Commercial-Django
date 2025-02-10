@@ -35,8 +35,10 @@ else:
     DEBUG = False
     
     
-ALLOWED_HOSTS = ["commercial-django-production.up.railway.app", "https://commercial-django-production.up.railway.app"]
-CSRF_TRUSTED_ORIGINS =["commercial-django-production.up.railway.app", "https://commercial-django-production.up.railway.app"]
+ALLOWED_HOSTS = ["commercial-django-production.up.railway.app"]
+
+CSRF_TRUSTED_ORIGINS = ["https://commercial-django-production.up.railway.app"]
+
     
 
 
@@ -104,7 +106,7 @@ DATABASES = {
         'ENGINE': os.getenv('django.db.backends.postgresql'),
         'NAME': os.getenv('railway'),
         'USER': os.getenv('postgres'),
-        'PASSWORD': os.getenv('xbiWlFZsFntrfmuIigqLhDoiAgfputbQ'),
+        'PASSWORD': os.getenv('DB_PASSWORD_W'),
         'HOST': os.getenv('postgresql://postgres:xbiWlFZsFntrfmuIigqLhDoiAgfputbQ@junction.proxy.rlwy.net:33767/railway'),
         'PORT': os.getenv('5432'),
     }
