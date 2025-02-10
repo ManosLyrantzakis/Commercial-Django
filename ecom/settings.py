@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = False
 
     
-ALLOWED_HOSTS = ["commercial-django-production.up.railway.app", 'localhost']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','commercial-django-production.up.railway.app',]
 
 CSRF_TRUSTED_ORIGINS = ["https://commercial-django-production.up.railway.app"]
 
