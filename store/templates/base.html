@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Ecommerce</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'assets/favicon.ico' %}"
+    />
+    <!-- Bootstrap icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Εφαρμογή φόντου για όλη την εφαρμογή */
+      body {
+        background-color: #6c757d; /* Χρώμα που αντιστοιχεί στο $gray-500 */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      main {
+        flex: 1; /* Καταλαμβάνει τον διαθέσιμο χώρο */
+      }
+
+      footer {
+        margin-top: auto; /* Τοποθετεί το footer στο τέλος */
+        background-color: #343a40; /* Μπορείς να αλλάξεις και το χρώμα του footer αν θέλεις */
+      }
+
+      /* Κάνει το footer να είναι πάντα στο κάτω μέρος */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer {
+        background-color: #343a40; /* Αν θέλεις άλλο χρώμα για το footer */
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'navbar.html' %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %}
+
+    <!-- Κύριο περιεχόμενο -->
+    <main>{% block content %} {% endblock %}</main>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; Codemy since 2025
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Core theme JS -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>

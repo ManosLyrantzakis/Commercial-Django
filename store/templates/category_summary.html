@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- Header -->
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Categories</h1>
+      <p class="lead fw-normal text-white-50 mb-0">
+        Choose Your Category below
+      </p>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <div class="row">
+        {% for category in categories %}
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="category-item">
+            <a href="{% url 'category' category %}" class="category-link">
+              <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <div class="card-body text-center">
+                  <h4 class="card-title text-dark">{{ category }}</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- Add custom CSS for hover effect and mobile responsiveness -->
+<style>
+  .category-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+
+  .category-link:hover .card {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .category-item {
+    transition: transform 0.3s ease;
+  }
+
+  .category-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Responsive design */
+  @media (max-width: 767px) {
+    .card-body {
+      padding: 1.5rem;
+    }
+  }
+</style>
