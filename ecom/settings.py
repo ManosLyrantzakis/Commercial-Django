@@ -35,8 +35,8 @@ else:
     DEBUG = False
     
     
-ALLOWED_HOSTS =[]
-CSRF_TRUSTED_ORIGINS =[]
+ALLOWED_HOSTS = ["commercial-django-production.up.railway.app", "https://commercial-django-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS =["commercial-django-production.up.railway.app", "https://commercial-django-production.up.railway.app"]
     
 
 
