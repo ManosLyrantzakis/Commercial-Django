@@ -35,7 +35,7 @@ else:
     DEBUG = False
     
     
-ALLOWED_HOSTS = ["commercial-django-production.up.railway.app"]
+ALLOWED_HOSTS = ["commercial-django-production.up.railway.app",]
 
 CSRF_TRUSTED_ORIGINS = ["https://commercial-django-production.up.railway.app"]
 
