@@ -1,0 +1,18 @@
+{
+    "$schema": "https://railway.app/railway.schema.json",
+    "build": {
+      "nixpacksPlan": {
+        "phases": {
+          "build": {
+            "commands": [
+              "python manage.py collectstatic --noinput",
+              "python manage.py migrate"
+            ]
+          }
+        }
+      }
+    },
+    "deploy": {
+      "startCommand": "gunicorn ecom.wsgi:application --bind 0.0.0.0:${PORT}"
+    }
+  }
