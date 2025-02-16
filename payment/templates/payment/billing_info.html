@@ -42,7 +42,7 @@
             {% endfor %}
             Total:  ${{ totals }}
             <br/><br/>
-            <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary">Update Items</a>
+            <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-success">Update Items</a>
           </div>
         </div>
 <br/><br/>
@@ -61,7 +61,7 @@
     Zipcode: {{ shipping_info.shipping_zipcode }}<br/>
     Country: {{ shipping_info.shipping_country }}<br/>
     <br/>
-    <a href="{% url 'checkout' %}" class="btn btn-outline-secondary">Update Shipping</a>
+    <a href="{% url 'checkout' %}" class="btn btn-sm btn-success">Update Shipping</a>
 
   </div>
 </div>
@@ -89,7 +89,7 @@
 
 
 
-<button type="submit" class="btn btn-secondary">
+<button type="submit" class="btn btn-success">
   Pay Now
 </button>
 </form>
