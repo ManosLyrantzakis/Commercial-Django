@@ -79,12 +79,9 @@ WSGI_APPLICATION = "ecom.wsgi.application"
 DATABASE_URL = env("DATABASE_URL", default="")
 print(f"📌 DATABASE_URL from environ: {DATABASE_URL if DATABASE_URL else 'Not Found'}")
 
-# ---------------------------------
-# DATABASE CONFIGURATION
-# ---------------------------------
 if DATABASE_URL:
     DATABASES = {
-        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
     }
 else:
     print("⚠️ DATABASE_URL is missing! Using fallback settings.")
@@ -93,12 +90,11 @@ else:
             "ENGINE": "django.db.backends.postgresql",
             "NAME": env("DB_NAME", default="railway"),
             "USER": env("DB_USER", default="postgres"),
-            "PASSWORD": env("DB_PASSWORD", default="NGrPDMsxhNBRRNqQbZbGTNHbCxodbkns"),
-            "HOST": env("DB_HOST", default="autorack.proxy.rlwy.net"),
-            "PORT": env("DB_PORT", default="47504"),
+            "PASSWORD": env("DB_PASSWORD", default="your-secure-password"),
+            "HOST": env("DB_HOST", default="your-hostname"),
+            "PORT": env("DB_PORT", default="your-port"),
         }
     }
-
 # ---------------------------------
 # PASSWORD VALIDATION
 # ---------------------------------
